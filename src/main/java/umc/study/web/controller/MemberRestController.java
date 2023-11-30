@@ -10,7 +10,7 @@ import umc.study.apiPayload.ApiResponse;
 import umc.study.converter.MemberConverter;
 import umc.study.domain.Member;
 import umc.study.service.MemberCommandService;
-import umc.study.web.MemberRequestDTO;
+import umc.study.web.dto.MemberRequestDTO;
 import umc.study.web.dto.MemberResponseDTO;
 
 @RestController
