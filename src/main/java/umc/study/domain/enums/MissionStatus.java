@@ -1,5 +1,5 @@
 package umc.study.domain.enums;
 
-public enum MissionStatus {
+public enum MissionStatus  {
     CHALLENGING, COMPLETE
 }
