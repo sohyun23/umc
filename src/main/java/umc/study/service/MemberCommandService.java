@@ -1,7 +1,7 @@
 package umc.study.service;
 
 import umc.study.domain.Member;
-import umc.study.web.MemberRequestDTO;
+import umc.study.web.dto.MemberRequestDTO;
 
 public interface MemberCommandService {
 
