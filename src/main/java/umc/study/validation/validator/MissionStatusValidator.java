@@ -11,7 +11,7 @@ import javax.validation.ConstraintValidatorContext;
 
 @Component
 @RequiredArgsConstructor
-public class MissionStatusValidator implements ConstraintValidator<ValidMissionStatus, String> {
+public class MissionStatusValidator implements ConstraintValidator<ValidMissionStatus, MissionStatus> {
 
 
     @Override
@@ -20,7 +20,7 @@ public class MissionStatusValidator implements ConstraintValidator<ValidMissionS
     }
 
     @Override
-    public boolean isValid(String value, ConstraintValidatorContext context) {
+    public boolean isValid(MissionStatus value, ConstraintValidatorContext context) {
         boolean isValid = false;
         if (value.equals(MissionStatus.CHALLENGING)) {
             isValid = true;
@@ -32,8 +32,24 @@ public class MissionStatusValidator implements ConstraintValidator<ValidMissionS
             context.buildConstraintViolationWithTemplate(ErrorStatus.MISSION_STATUS_NOT_CHALLENGING.toString()).addConstraintViolation();
             return false;
         }
-
         return true;
     }
+
+//    @Override
+//    public boolean isValid(String value, ConstraintValidatorContext context) {
+//        boolean isValid = false;
+//        if (value.equals(MissionStatus.CHALLENGING)) {
+//            isValid = true;
+//
+//        }
+//
+//        if (!isValid) {
+//            context.disableDefaultConstraintViolation();
+//            context.buildConstraintViolationWithTemplate(ErrorStatus.MISSION_STATUS_NOT_CHALLENGING.toString()).addConstraintViolation();
+//            return false;
+//        }
+//
+//        return true;
+//    }
 }
 

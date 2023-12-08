@@ -43,4 +43,13 @@ public class StoreRestController {
         Mission mission = missionService.addMission(request);
         return ApiResponse.onSuccess(MissionConverter.toMissionResponseDTO(mission));
     }
+
+    @PostMapping("/{store_id}/missions/{mission_status}")
+    public ApiResponse<MissionResponseDTO.mission> addChellengingMission(@RequestBody @Valid MissionRequestDTO.challengingMission request,
+                                                                         @PathVariable(name = "store_id") Long storeId
+            ){
+
+        Mission mission = missionService.addChellengingMission(request);
+        return ApiResponse.onSuccess(MissionConverter.toMissionResponseDTO(mission));
+    }
 }

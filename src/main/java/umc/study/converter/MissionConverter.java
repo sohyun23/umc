@@ -13,7 +13,6 @@ public class MissionConverter {
                 .reward(request.getReward())
                 .deadline(LocalDate.from(request.getDeadline()))
                 .missionSpec(request.getMissionSpec())
-//                .memberMissionList(new ArrayList<>())
                 .build();
     }
 
@@ -21,6 +20,14 @@ public class MissionConverter {
         return MissionResponseDTO.mission.builder()
                 .missionId(mission.getId())
                 .createdAt(LocalDateTime.now())
+                .build();
+    }
+
+    public static Mission toChallengingMission(MissionRequestDTO.challengingMission request) {
+        return Mission.builder()
+                .reward(request.getReward())
+                .deadline(LocalDate.from(request.getDeadline()))
+                .missionSpec(request.getMissionSpec())
                 .build();
     }
 }

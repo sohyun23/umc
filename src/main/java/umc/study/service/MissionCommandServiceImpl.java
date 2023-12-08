@@ -21,4 +21,11 @@ public class MissionCommandServiceImpl {
 
         return missionRepository.save(mission);
     }
+
+    @Transactional
+    public Mission addChellengingMission(MissionRequestDTO.challengingMission request) {
+        Mission mission = MissionConverter.toChallengingMission(request);
+
+        return missionRepository.save(mission);
+    }
 }
