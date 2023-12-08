@@ -1,12 +1,12 @@
 package umc.study.domain;
 
 import lombok.*;
-import lombok.extern.java.Log;
 import umc.study.domain.common.BaseEntity;
 
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -21,6 +21,4 @@ public class Region extends BaseEntity {
 
     private String name;
 
-    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
-    private List<Store> storeList = new ArrayList<>();
 }

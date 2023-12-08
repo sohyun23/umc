@@ -5,17 +5,17 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 public class StoreResponseDTO {
 
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class store{
+    public static class storeResult{
         Long storeId;
-        String name;
-        String address;
-        Float score;
+        LocalDateTime createdAt;
     }
 
 }

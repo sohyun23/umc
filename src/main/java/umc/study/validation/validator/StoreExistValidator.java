@@ -3,17 +3,19 @@ package umc.study.validation.validator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
-import umc.study.repository.ReviewRepository;
+import umc.study.domain.Store;
+import umc.study.service.StoreQueryServiceImpl;
 import umc.study.validation.annotation.ExistStore;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
 public class StoreExistValidator implements ConstraintValidator<ExistStore, Long> {
 
-    private final ReviewRepository reviewRepository;
+    private final StoreQueryServiceImpl storeQueryService;
 
     @Override
     public void initialize(ExistStore constraintAnnotation) {
@@ -22,12 +24,13 @@ public class StoreExistValidator implements ConstraintValidator<ExistStore, Long
 
     @Override
     public boolean isValid(Long value, ConstraintValidatorContext context) {
-        boolean isValid = reviewRepository.existsById(value);
+        Optional<Store> target = storeQueryService.findStore(value);
 
-        if (!isValid) {
+        if (target.isEmpty()){
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate(ErrorStatus.STORE_NOT_FOUND.toString()).addConstraintViolation();
+            return false;
         }
-        return false;
+        return true;
     }
 }
