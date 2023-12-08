@@ -1,29 +1,27 @@
 package umc.study.web.dto;
 
 import lombok.Getter;
+import umc.study.validation.annotation.ExistStore;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import java.time.LocalDateTime;
 
 public class MissionRequestDTO {
 
     @Getter
     public static class mission{
-        @NotBlank
+        @NotNull
         Integer reward;
 
-        @NotNull
-        Integer deadlineYear;
-        @NotNull
-        Integer deadlineMonth;
-
-        @NotNull
-        Integer deadlineDay;
+//        @NotNull
+        LocalDateTime deadline;
 
         @NotNull
         String missionSpec;
 
-        List<Long> memberMission;
+        @ExistStore
+        Long storeId;
+
+
     }
 }

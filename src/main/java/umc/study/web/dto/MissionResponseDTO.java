@@ -15,9 +15,7 @@ public class MissionResponseDTO {
     @AllArgsConstructor
     public static class mission{
         Long missionId;
-        Integer reward;
-        LocalDateTime deadline;
-        String missionSpec;
+        LocalDateTime createdAt;
 
     }
 }

@@ -15,5 +15,5 @@ public @interface ValidMissionStatus {
     String message() default "도전 중인 미션이 아닙니다.";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-    Class<? extends java.lang.Enum<?>> enumClass();
+//    Class<? extends java.lang.Enum<?>> enumClass();
 }

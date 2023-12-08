@@ -1,19 +1,23 @@
 package umc.study.web.dto;
 
 import lombok.Getter;
+import umc.study.validation.annotation.ExistMember;
 import umc.study.validation.annotation.ExistStore;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class ReviewRequestDTO {
     @Getter
     public static class review{
         @NotBlank
         String title;
-        @NotBlank
+        @NotNull
         Float score;
+        @ExistMember
+        Long memberId;
         @ExistStore
-        Long store;
+        Long storeId;
 
     }
 }

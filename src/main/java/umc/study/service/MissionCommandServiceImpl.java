@@ -11,10 +11,11 @@ import umc.study.web.dto.MissionRequestDTO;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class MissionService {
+public class MissionCommandServiceImpl {
 
     public final MissionRepository missionRepository;
 
+    @Transactional
     public Mission addMission(MissionRequestDTO.mission request) {
         Mission mission = MissionConverter.toMission(request);
 

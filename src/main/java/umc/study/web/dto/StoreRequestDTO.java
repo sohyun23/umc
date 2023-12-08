@@ -9,5 +9,8 @@ public class StoreRequestDTO {
         String name;
         String address;
         Float score;
+        Long regionId;
+        String regionName;
+
     }
 }
