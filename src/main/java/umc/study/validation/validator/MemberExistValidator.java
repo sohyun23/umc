@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
 import umc.study.domain.Member;
-import umc.study.service.MemberQueryServiceImpl;
+import umc.study.service.member.MemberQueryServiceImpl;
 import umc.study.validation.annotation.ExistMember;
 
 import javax.validation.ConstraintValidator;

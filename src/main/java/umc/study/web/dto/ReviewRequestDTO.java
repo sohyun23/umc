@@ -9,9 +9,11 @@ import javax.validation.constraints.NotNull;
 
 public class ReviewRequestDTO {
     @Getter
-    public static class review{
+    public static class requestReview{
         @NotBlank
         String title;
+//        @NotNull
+        String body;
         @NotNull
         Float score;
         @ExistMember
@@ -20,4 +22,6 @@ public class ReviewRequestDTO {
         Long storeId;
 
     }
+
+
 }

@@ -13,4 +13,6 @@ public class StoreRequestDTO {
         String regionName;
 
     }
+
+
 }

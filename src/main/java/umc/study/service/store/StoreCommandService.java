@@ -1,4 +1,4 @@
-package umc.study.service;
+package umc.study.service.store;
 
 import umc.study.domain.Review;
 import umc.study.domain.Store;
@@ -9,5 +9,5 @@ public interface StoreCommandService {
 
     Store addStore(StoreRequestDTO.store request);
 
-    Review addReview(ReviewRequestDTO.review request);
+    Review addReview(ReviewRequestDTO.requestReview request);
 }

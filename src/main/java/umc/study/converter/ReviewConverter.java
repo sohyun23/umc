@@ -10,12 +10,13 @@ import java.time.LocalDateTime;
 
 public class ReviewConverter {
 
-    public static Review toReview(ReviewRequestDTO.review request, Member member, Store store) {
+    public static Review toReview(ReviewRequestDTO.requestReview request, Member member, Store store) {
 
 
 
         return Review.builder()
                 .title(request.getTitle())
+                .body(request.getBody())
                 .score(request.getScore())
                 .member(member)
                 .store(store)

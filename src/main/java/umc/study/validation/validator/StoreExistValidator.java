@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.study.apiPayload.code.status.ErrorStatus;
 import umc.study.domain.Store;
-import umc.study.service.StoreQueryServiceImpl;
+import umc.study.service.store.StoreQueryServiceImpl;
 import umc.study.validation.annotation.ExistStore;
 
 import javax.validation.ConstraintValidator;
@@ -31,6 +31,11 @@ public class StoreExistValidator implements ConstraintValidator<ExistStore, Long
             context.buildConstraintViolationWithTemplate(ErrorStatus.STORE_NOT_FOUND.toString()).addConstraintViolation();
             return false;
         }
+//        if (target.isPresent()){
+//            context.disableDefaultConstraintViolation();
+//            context.buildConstraintViolationWithTemplate(ErrorStatus.STORE_NOT_FOUND.toString()).addConstraintViolation();
+//            return false;
+//        }
         return true;
     }
 }

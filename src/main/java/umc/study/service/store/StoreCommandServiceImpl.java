@@ -1,4 +1,4 @@
-package umc.study.service;
+package umc.study.service.store;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -31,7 +31,7 @@ public class StoreCommandServiceImpl implements StoreCommandService{
     }
 
     @Transactional
-    public Review addReview(ReviewRequestDTO.review request) {
+    public Review addReview(ReviewRequestDTO.requestReview request) {
         Member member = memberRepository.findById(request.getMemberId()).get();
         Store store =  storeRepository.findById(request.getStoreId()).get();
 

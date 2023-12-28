@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class MissionRequestDTO {
 
     @Getter
-    public static class mission{
+    public static class requestMission{
         @NotNull
         Integer reward;
 

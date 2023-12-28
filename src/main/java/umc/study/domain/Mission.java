@@ -1,7 +1,6 @@
 package umc.study.domain;
 
 import lombok.*;
-import lombok.extern.java.Log;
 import umc.study.domain.common.BaseEntity;
 import umc.study.domain.mapping.MemberMission;
 
@@ -12,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor

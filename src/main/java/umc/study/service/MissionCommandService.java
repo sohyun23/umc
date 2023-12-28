@@ -5,5 +5,7 @@ import umc.study.web.dto.MissionRequestDTO;
 
 public interface MissionCommandService {
 
-    Mission addMission(MissionRequestDTO.mission request);
+    Mission addMission(MissionRequestDTO.requestMission request);
+
+
 }

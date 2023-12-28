@@ -1,4 +1,4 @@
-package umc.study.service;
+package umc.study.service.member;
 
 import umc.study.domain.Member;
 import umc.study.web.dto.MemberRequestDTO;

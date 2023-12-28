@@ -1,4 +1,4 @@
-package umc.study.service;
+package umc.study.service.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class MemberCommandServiceImpl implements MemberCommandService{
+public class MemberCommandServiceImpl implements MemberCommandService {
 
     private final MemberRepository memberRepository;
 
